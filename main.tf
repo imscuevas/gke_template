@@ -73,6 +73,11 @@ resource "google_container_cluster" "cluster" {
     disabled = var.cluster_default_snat_status_disabled
   }
 
+  dns_config {
+    cluster_dns       = var.cluster_dns
+    cluster_dns_scope = var.cluster_dns_scope
+  }
+
   gateway_api_config {
     channel = var.cluster_gateway_api_config_channel
   }
@@ -83,7 +88,7 @@ resource "google_container_cluster" "cluster" {
   }
 
   network_policy {
-    enabled = var.cluster_network_policy_enabled
+    enabled  = var.cluster_network_policy_enabled
     provider = var.cluster_network_policy_provider
   }
 

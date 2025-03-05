@@ -134,7 +134,7 @@ variable "cluster_network_policy_enabled" {
   description = "Enable Network policy (Calico)?"
 }
 variable "cluster_network_policy_provider" {
-  type = string
+  type        = string
   description = "Network policy provider"
 }
 variable "cluster_http_load_balancing_disabled" {
@@ -144,4 +144,16 @@ variable "cluster_http_load_balancing_disabled" {
 variable "cluster_gateway_api_config_channel" {
   type        = string
   description = "Cluster Gateway API config channel"
+}
+variable "cluster_dns" {
+  type        = string
+  description = "Cluster DNS provider"
+  nullable    = true
+  default     = null
+}
+variable "cluster_dns_scope" {
+  type        = string
+  description = "Cluster DNS scope"
+  nullable    = true
+  default     = null
 }
